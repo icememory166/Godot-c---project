@@ -138,7 +138,7 @@ public partial class PlatformerController : CharacterBody2D
 
     #region Jump
 
-    private float _jumpForce = -300f;
+    [Export]private float _jumpForce = -300f;
 
     private void HandleJump(ref Vector2 vel)
     {
