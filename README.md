@@ -6,3 +6,6 @@ idag har jag fortsatt med c# tutorialen i godot för en character controller och
 
 17-10-23:
 Idag har jag börjat med godots egna 2d tutorial i c#.
+
+7-11-23
+Idag har jag fortsatt med 2d tutorialen i c#. Jag gjorde klart player scenen och började med en mob scene.
