@@ -1,6 +1,6 @@
 using Godot;
 
-public partial class player : Area2D
+public partial class Player : Area2D
 {
 
     [Signal]
@@ -73,11 +73,18 @@ public partial class player : Area2D
         }
     }
 
-    private void OnBodyEntered(PhysicsBody2D body)
+    private void _on_body_entered(PhysicsBody2D body)
     {
         Hide(); // Player disappears after being hit.
         EmitSignal(SignalName.Hit);
         // Must be deferred as we can't change physics properties on a physics callback.
         GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
+    }
+
+    public void Start(Vector2 position)
+    {
+        Position = position;
+        Show();
+        GetNode<CollisionShape2D>("CollisionShape2D").Disabled = false;
     }
 }
