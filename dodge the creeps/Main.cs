@@ -11,6 +11,7 @@ public partial class Main : Node
 
     public override void _Ready()
 	{
+        NewGame();
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,6 +23,9 @@ public partial class Main : Node
     {
         GetNode<Timer>("MobTimer").Stop();
         GetNode<Timer>("ScoreTimer").Stop();
+        GetNode<HUD>("HUD").ShowGameOver();
+        GetNode<AudioStreamPlayer>("Music").Stop();
+        GetNode<AudioStreamPlayer>("DeathSound").Play();
     }
 
     public void NewGame()
@@ -33,6 +37,14 @@ public partial class Main : Node
         player.Start(startPosition.Position);
 
         GetNode<Timer>("StartTimer").Start();
+
+        var hud = GetNode<HUD>("HUD");
+        hud.UpdateScore(_score);
+        hud.ShowMessage("Get Ready!");
+        // Note that for calling Godot-provided methods with strings,
+        // we have to use the original Godot snake_case name.
+        GetTree().CallGroup("mobs", Node.MethodName.QueueFree);
+        GetNode<AudioStreamPlayer>("Music").Play();
     }
 
     private void _on_score_timer_timeout()
