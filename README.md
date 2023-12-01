@@ -14,3 +14,6 @@ Idag har jag fortsatt med 2d tutorialen i c#. Jag gjorde klart player scenen och
 Idag har jag fortsatt med 2d spelet och skapat en huvudscen som har några timers och jag har också börjat göra ett HUD för spelet. Det var flera buggar med namn och liknande som tog ett tag att lösa men jag lyckades lösa problemen en bit i taget och det gick tillslut.
 
 28-11-23 Idag har jag fortsatt jobba lite med HUDen.
+
+1-12-23
+Idag har jag fixat ett par bugar som förhindrade arbetet och gjort klart det mesta med spelet och lagt till musik och en ljudeffekt.
