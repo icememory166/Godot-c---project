@@ -17,3 +17,6 @@ Idag har jag fortsatt med 2d spelet och skapat en huvudscen som har några timer
 
 1-12-23
 Idag har jag fixat ett par bugar som förhindrade arbetet och gjort klart det mesta med spelet och lagt till musik och en ljudeffekt.
+
+8-12-23
+Idag har fixat ett par bugar med spelet och är nästan klar, bara fler bugar att fixa.

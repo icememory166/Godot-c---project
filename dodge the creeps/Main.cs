@@ -8,10 +8,10 @@ public partial class Main : Node
     public PackedScene MobScene { get; set; }
 
     private int _score;
+    private HUD hud;
 
     public override void _Ready()
 	{
-        NewGame();
     }
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,7 +38,7 @@ public partial class Main : Node
 
         GetNode<Timer>("StartTimer").Start();
 
-        var hud = GetNode<HUD>("HUD");
+        hud = GetNode<HUD>("HUD");
         hud.UpdateScore(_score);
         hud.ShowMessage("Get Ready!");
         // Note that for calling Godot-provided methods with strings,
@@ -50,6 +50,8 @@ public partial class Main : Node
     private void _on_score_timer_timeout()
     {
         _score++;
+        GD.Print(_score);
+        hud.UpdateScore(_score);
     }
 
     private void _on_start_timer_timeout()
